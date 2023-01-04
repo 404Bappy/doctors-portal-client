@@ -16,7 +16,7 @@ const MakeAppointment = () => {
                 <h3 className='text-xl text-primary font-bold'>Appointment</h3>
                 <h2 className='text-3xl text-white'>Make an Appointment Today</h2>
                 <p className='text-white'>Welcome to Doctors Portal LTD. This is the first "Super Specialized" Portal in Bangladesh. You will find country wide well known top class specialist at Doctors Portal LTD and Research Center. They are always ready to provide you the best treatment. We always concern about the value of your Health and Money.</p>
-                <button class="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary">Get Started</button>
+                <button className="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary">Get Started</button>
             </div>
         </section>
     );
