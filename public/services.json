@@ -15,8 +15,6 @@
         "id": 2,
         "name": "Cosmetic Dentistry",
         "Slots": [
-            "08.00 AM - 08.30 AM",
-            "08.30 AM - 09.00 AM",
             "09.00 AM - 09.30 AM",
             "09.00 AM - 10.00 AM",
             "10.00 AM - 10.30 AM",
@@ -33,8 +31,6 @@
         "name": "Pediatric Dental",
         "Slots": [
             "08.00 AM - 08.30 AM",
-            "08.30 AM - 09.00 AM",
-            "09.00 AM - 09.30 AM",
             "09.00 AM - 10.00 AM",
             "10.00 AM - 10.30 AM",
             "10.30 AM - 11.00 AM"
@@ -56,10 +52,7 @@
         "id": 6,
         "name": "Oral Surgery",
         "Slots": [
-            "08.00 AM - 08.30 AM",
-            "08.30 AM - 09.00 AM",
-            "09.00 AM - 09.30 AM",
-            "09.00 AM - 10.00 AM",
+           
             "10.00 AM - 10.30 AM",
             "10.30 AM - 11.00 AM"
         ]
