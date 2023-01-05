@@ -1,44 +1,67 @@
 [
     {
         "id": 1,
-        "name": "ENGINE DIAGNOSTIC",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "name": "Teeth Orthodontics",
+        "Slots": [
+            "08.00 AM - 08.30 AM",
+            "08.30 AM - 09.00 AM",
+            "09.00 AM - 09.30 AM",
+            "09.00 AM - 10.00 AM",
+            "10.00 AM - 10.30 AM",
+            "10.30 AM - 11.00 AM"
+        ]
     },
     {
         "id": 2,
-        "name": "WHEEL ALIGNMENT",
-        "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/tY8dmnP/2.jpg"
+        "name": "Cosmetic Dentistry",
+        "Slots": [
+            "08.00 AM - 08.30 AM",
+            "08.30 AM - 09.00 AM",
+            "09.00 AM - 09.30 AM",
+            "09.00 AM - 10.00 AM",
+            "10.00 AM - 10.30 AM",
+            "10.30 AM - 11.00 AM"
+        ]
     },
     {
         "id": 3,
-        "name": "OIL CHANGING",
-        "price": "150",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/Yh04YVw/3.jpg"
+        "name": "Cavity Protection",
+        "Slots": []
     },
     {
         "id": 4,
-        "name": "BRAKE REPARING",
-        "price": "180",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/ZX2Cbkn/4.jpg"
+        "name": "Pediatric Dental",
+        "Slots": [
+            "08.00 AM - 08.30 AM",
+            "08.30 AM - 09.00 AM",
+            "09.00 AM - 09.30 AM",
+            "09.00 AM - 10.00 AM",
+            "10.00 AM - 10.30 AM",
+            "10.30 AM - 11.00 AM"
+        ]
     },
     {
         "id": 5,
-        "name": "WASH AND GLASSING",
-        "price": "100",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/FgQ3jXp/5.jpg"
+        "name": "Teeth Cleaning",
+        "Slots": [
+            "08.00 AM - 08.30 AM",
+            "08.30 AM - 09.00 AM",
+            "09.00 AM - 09.30 AM",
+            "09.00 AM - 10.00 AM",
+            "10.00 AM - 10.30 AM",
+            "10.30 AM - 11.00 AM"
+        ]
     },
     {
         "id": 6,
-        "name": "COMPLETE ANALYSIS",
-        "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
-        "img": "https://i.ibb.co/zJy5ZDd/6.jpg"
+        "name": "Oral Surgery",
+        "Slots": [
+            "08.00 AM - 08.30 AM",
+            "08.30 AM - 09.00 AM",
+            "09.00 AM - 09.30 AM",
+            "09.00 AM - 10.00 AM",
+            "10.00 AM - 10.30 AM",
+            "10.30 AM - 11.00 AM"
+        ]
     }
 ]
