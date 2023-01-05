@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 
 const BookingModal = ({ date, treatment, setTreatment }) => {
     const { _id, name, Slots } = treatment;
-    const handleBooking = event =>{
+    const handleBooking = event => {
         event.preventDefault();
         const slot = event.target.slot.value;
         console.log(_id, name, slot);
