@@ -39,15 +39,51 @@ const Login = () => {
                                     },
 
                                     pattern: {
-                                        value: /[A-Za-z]{3}/,
+                                        value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                                         message: 'Provide a Valid Email'
                                     }
                                 })}
                             />
                             <label class="label">
-                                <span class="label-text-alt">Alt label</span>
+                                {errors.email?.type === 'required' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
+
                             </label>
                         </div>
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Email</span>
+                            </label>
+                            <input type="email"
+                                placeholder="Your Email"
+                                class="input input-bordered w-full max-w-xs"
+                                {...register("email", {
+
+                                    required: {
+                                        value: true,
+                                        message: "Email is Required"
+                                    },
+
+                                    pattern: {
+                                        value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                                        message: 'Provide a Valid Email'
+                                    }
+                                })}
+                            />
+                            <label class="label">
+                                {errors.email?.type === 'required' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
+
+                            </label>
+                        </div>
+
+
+
+
+
+
+
+
 
                         <input
 
