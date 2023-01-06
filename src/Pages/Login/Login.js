@@ -2,6 +2,7 @@ import React from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
+import Loading from '../Shared/Loading';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -15,12 +16,12 @@ const Login = () => {
 
     let signInError;
 
-    if (loading || gLoading) {
-        return <button class="btn loading">loading</button>
+    if ( loading || gLoading) {
+        return <Loading></Loading>
     }
 
     if (error || gError) {
-        signInError = <p>{error?.message || gError?.message}</p>
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
 
 
