@@ -52,52 +52,34 @@ const Login = () => {
                         </div>
                         <div class="form-control w-full max-w-xs">
                             <label class="label">
-                                <span class="label-text">Email</span>
+                                <span class="label-text">Password</span>
                             </label>
-                            <input type="email"
-                                placeholder="Your Email"
+                            <input type="password"
+                                placeholder="Your Password"
                                 class="input input-bordered w-full max-w-xs"
-                                {...register("email", {
+                                {...register("password", {
 
                                     required: {
                                         value: true,
-                                        message: "Email is Required"
+                                        message: "Password is Required"
                                     },
 
-                                    pattern: {
-                                        value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                                        message: 'Provide a Valid Email'
+                                    minLength: {
+                                        value: 6,
+                                        message: 'must be 6 characters or longer'
                                     }
                                 })}
                             />
                             <label class="label">
-                                {errors.email?.type === 'required' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-500">{errors.email.message}</span>}
+                                {errors.password?.type === 'required' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-500">{errors.password.message}</span>}
 
                             </label>
                         </div>
 
 
 
-
-
-
-
-
-
-                        <input
-
-                            aria-invalid={errors.firstName ? "true" : "false"}
-                        />
-                        {errors.firstName?.type === 'required' && <p role="alert">First name is required</p>}
-
-                        <input
-                            {...register("mail", { required: "Email Address is required" })}
-                            aria-invalid={errors.mail ? "true" : "false"}
-                        />
-                        {errors.mail && <p role="alert">{errors.mail?.message}</p>}
-
-                        <input type="submit" />
+                        <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
                     <button
                         onClick={() => signInWithGoogle()}
