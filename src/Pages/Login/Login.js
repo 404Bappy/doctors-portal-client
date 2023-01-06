@@ -32,9 +32,15 @@ const Login = () => {
                                 placeholder="Your Email"
                                 class="input input-bordered w-full max-w-xs"
                                 {...register("email", {
+
+                                    required: {
+                                        value: true,
+                                        message: "Email is Required"
+                                    },
+
                                     pattern: {
                                         value: /[A-Za-z]{3}/,
-                                        message: 'error message'
+                                        message: 'Provide a Valid Email'
                                     }
                                 })}
                             />
