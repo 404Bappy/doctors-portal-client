@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -16,6 +16,15 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     let signInError;
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
+    useEffect(() => {
+        if (user || gUser) {
+            navigate(from, { replace: true });
+        }
+    }, [user, gUser, from, navigate])
 
     if (loading || gLoading) {
         return <Loading></Loading>
@@ -26,12 +35,10 @@ const Login = () => {
     }
 
 
-    if (user || gUser) {
-        console.log(user || gUser);
-    }
+
 
     const onSubmit = data => {
-        console.log(data);
+
         signInWithEmailAndPassword(data.email, data.password);
     }
 
@@ -41,7 +48,7 @@ const Login = () => {
                 <div class="card-body">
                     <h2 class="text-center text-2xl font-bold">Login</h2>
 
-                  
+
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div class="form-control w-full max-w-xs">
