@@ -1,9 +1,9 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const SignUp = () => {
@@ -17,14 +17,18 @@ const SignUp = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
 
+      const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+      const navigate = useNavigate();
+
     let signInError;
 
-    if (loading || gLoading) {
+    if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
 
-    if (error || gError) {
-        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+    if (error || gError || updateError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError.message}</small></p>
     }
 
 
@@ -32,9 +36,12 @@ const SignUp = () => {
         console.log(user || gUser);
     }
 
-    const onSubmit = data => {
-        console.log(data);
-        createUserWithEmailAndPassword(data.email, data.password);
+    const onSubmit = async data => {
+        
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name  });
+        console.log('Update Done');
+        navigate('/appointment');
     }
 
 
@@ -44,7 +51,7 @@ const SignUp = () => {
                 <div class="card-body">
                     <h2 class="text-center text-2xl font-bold">Sign Up</h2>
 
-                    <div className="divider">OR</div>
+                    
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div class="form-control w-full max-w-xs">

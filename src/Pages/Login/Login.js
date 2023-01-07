@@ -41,7 +41,7 @@ const Login = () => {
                 <div class="card-body">
                     <h2 class="text-center text-2xl font-bold">Login</h2>
 
-                    <div className="divider">OR</div>
+                  
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div class="form-control w-full max-w-xs">
