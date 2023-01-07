@@ -23,7 +23,27 @@ const BookingModal = ({ date, treatment, setTreatment }) => {
             phone: event.target.phone.value
         }
 
-        setTreatment(null);
+        fetch('http://localhost:9000/booking', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+            .then(res => res.json())
+            .then(data => {
+
+
+                if (data.success) {
+                    toast(`Appointment is set, ${formattedDate} at ${slot}`)
+                }
+                else {
+                    toast.error(`Already have an Appointment on, ${data.booking?.date} at ${data.booking?.slot}`)
+                }
+                setTreatment(null);
+            });
+
+
     }
     return (
         <div>
