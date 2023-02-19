@@ -6,11 +6,12 @@ import BookingModal from './BookingModal';
 import Service from './Service';
 
 const AvailableAppointment = ({ date }) => {
-    
-    const [treatment, setTreatment] = useState(null);
+
+    const [treatment, setTreatment] = useState(null)
+
 
     const formattedDate = format(date, 'PP');
-    const { data: services, isLoading , refetch } = useQuery(['available', formattedDate], () => fetch(`http://localhost:9000/available?date=${formattedDate}`)
+    const { data: services, isLoading, refetch } = useQuery(['available', formattedDate], () => fetch(`http://localhost:9000/available?date=${formattedDate}`)
         .then(res => res.json())
     )
 
@@ -35,7 +36,7 @@ const AvailableAppointment = ({ date }) => {
                 date={date}
                 treatment={treatment}
                 setTreatment={setTreatment}
-                refetch= {refetch}
+                refetch={refetch}
 
             ></BookingModal>}
         </div>
